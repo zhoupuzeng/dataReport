@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import CommonCard from "../CommCard/index"
+import CommonCard from "../CommonCard/index"
 export default {
   name: '',
   components: {

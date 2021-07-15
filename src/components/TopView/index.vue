@@ -3,22 +3,22 @@
     <el-row :gutter="20">
       <el-col :span="6">
         <el-card shadow="hover">
-          <sale-total />
+          <total-sales />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card shadow="hover">
-          鼠标悬浮时显示
+          <total-orders />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card shadow="hover">
-          鼠标悬浮时显示
+          <today-users />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card shadow="hover">
-          鼠标悬浮时显示
+          <total-users />
         </el-card>
       </el-col>
 
@@ -26,11 +26,17 @@
   </div>
 </template>
 <script>
-import SaleTotal from "../SaleTotal/index"
+import TotalSales from "../TotalSales/index"
+import TotalOrders from "../TotalOrders/index"
+import TodayUsers from "../TodayUsers/index"
+import TotalUsers from "../TotalUsers/index"
 export default {
   name: '',
   components: {
-    SaleTotal
+    TotalSales,
+    TotalOrders,
+    TodayUsers,
+    TotalUsers
   },
   data () {
     return {
