@@ -3,5 +3,6 @@ export default {
   components: {
     CommonCard
 
+
   }
 }
