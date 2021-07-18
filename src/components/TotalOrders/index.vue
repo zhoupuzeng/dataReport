@@ -1,38 +1,60 @@
 <template>
   <div>
-    <common-card title="234"
-                 value="123">
+    <common-card title="累计订单量"
+                 value="2,115,465">
       <template>
-        <div id="charts-sale"
+        <div id="total-orders-chart"
              :style="{width:'100%',height:'100%'}">
-
         </div>
+      </template>
+      <template v-slot:footer>
+        <span>昨日订单量</span>
+        <span class="emphasis">2,000,000</span>
       </template>
     </common-card>
   </div>
 </template>
 <script>
-import CommonCard from "../CommonCard/index"
+import commonCardMixin from "../../mixins/commonCardMixin"
 export default {
-  name: '',
-  components: {
-    CommonCard
-  },
+  name: 'total-users',
+  mixins: [commonCardMixin],
   data () {
     return {
     }
   },
   mounted () {
-    const chart = this.$echarts.init(document.getElementById("charts-sale"))
+    const chart = this.$echarts.init(document.getElementById("total-orders-chart"))
     chart.setOption({
       xAxis: {
-
+        type: 'category',
+        show: false,
+        boundaryGap: false
       },
-      yAxis: {},
+      yAxis: {
+        show: false,
+      },
       series: [{
-        type: 'bar',
-        data: [1, 2, 3]
-      }]
+        type: 'line',
+        data: [620, 432, 220, 534, 790, 430, 220, 320, 532, 320, 834, 690, 530, 220, 620],
+        areaStyle: {
+          color: 'purple'
+        },
+        lineStyle: {
+          width: 0
+        },
+        itemStyle: {
+          opacity: 0,
+        },
+        smooth: true
+      },
+      ],
+      grid: {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0
+      }
     })
   },
   computed: {

@@ -8,7 +8,6 @@
 </template>
 
 <script>
-
 import TopView from "../components/TopView/index";
 import SalesView from "../components/SalesView/index";
 import BottomView from "../components/BottomView/index";
@@ -32,5 +31,3 @@ export default {
   box-sizing: border-box
 }
 </style>
-
-
